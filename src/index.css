@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .reality-optimistic {
+    @apply bg-gradient-to-br from-emerald-50 to-cyan-50;
+  }
+  
+  .reality-realistic {
+    @apply bg-gradient-to-br from-gray-50 to-slate-100;
+  }
+  
+  .reality-disaster {
+    @apply bg-gradient-to-br from-red-50 to-orange-50;
+  }
+  
+  .task-card-optimistic {
+    @apply bg-emerald-100 border-emerald-300 shadow-emerald-200;
+  }
+  
+  .task-card-realistic {
+    @apply bg-gray-100 border-gray-300 shadow-gray-200;
+  }
+  
+  .task-card-disaster {
+    @apply bg-red-100 border-red-300 shadow-red-200;
+  }
+  
+  .glow-optimistic {
+    animation: glow-optimistic 2s ease-in-out infinite alternate;
+  }
+  
+  .glow-disaster {
+    animation: glow-disaster 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow-optimistic {
+    0% { box-shadow: 0 0 5px rgba(16, 185, 129, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.8), 0 0 30px rgba(16, 185, 129, 0.4); }
+  }
+  
+  @keyframes glow-disaster {
+    0% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.4); }
+  }
+}
